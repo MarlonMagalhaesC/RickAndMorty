@@ -1,9 +1,10 @@
 <template>
-  <div class="flex flex-wrap gap-4 justify-center">
+<div class="bg-black">
+  <div class="flex flex-wrap gap-4 justify-center max-w-[1300px] mx-auto">
     <div
       v-for="item in data.results"
       :key="item.id"
-      class="flex flex-col gap-2 w-[294px] h-[425px] bg-[#313234] text-white"
+      class="flex flex-col gap-2 w-[294px] h-[425px] bg-[#313234] text-white rounded-xl"
     >
       <div class="mx-auto mt-4 border border-[#000000] rounded-2xl w-[262px] h-[200px]">
         <NuxtImg
@@ -49,6 +50,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 
