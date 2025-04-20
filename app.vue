@@ -15,7 +15,7 @@
           </div>
 
           <div class="flex flex-row justify-between">
-            <div class="text-white flex flex-col gap-4">
+            <div class="text-white flex flex-col gap-3">
               <p> {{ data.results[0].name }} </p>
 
               <ul class="inline-block">
@@ -31,6 +31,12 @@
             </div>
           </div>
 
+            <NuxtLink :to="data.results[0].url">
+              <div class="flex gap-1 place-self-end px-3 py-2 rounded-full bg-[#11B0C8] mt-auto text-sm items-center">
+                <IconsReadmore/>
+                <span>Saiba Mais</span>
+              </div>
+            </NuxtLink>
         </div>
       </div>
     </div>
