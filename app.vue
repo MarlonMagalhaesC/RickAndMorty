@@ -11,7 +11,7 @@
         :name="item.name"
         :status="item.status"
         :species="item.species"
-        :planet="item.planet"
+        :planet="item.origin.name"
         :url="item.url"
       />
     </div>
