@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <div class="text-white">
-
-      <div class="flex flex-col bg-[#313234] card w-[294px] h-[400px] mx-auto">
+      <div class="flex flex-col bg-[#313234] card w-[294px] h-[400px] mx-auto text-white">
         <div class="mx-auto flex flex-col gap-2">
           <div class="mx-auto mt-4 border border-[#000000] rounded-2xl w-[262px] h-[200px]">
             <NuxtImg
@@ -38,9 +35,7 @@
               </div>
             </NuxtLink>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
