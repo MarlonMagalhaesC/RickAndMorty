@@ -14,20 +14,25 @@
             />
           </div>
 
-          <div class="text-white">
-            <p> {{ data.results[0].name }} </p>
+          <div class="flex flex-row justify-between">
+            <div class="text-white flex flex-col gap-4">
+              <p> {{ data.results[0].name }} </p>
+
+              <ul class="inline-block">
+                <li class="flex items-center gap-2"><IconsAlive/> {{ data.results[0].status }}</li>
+                <li class="flex items-center gap-2"><IconsHuman/> {{ data.results[0].species }} </li>
+                <li class="flex items-center gap-2"><IconsEarth/> {{ data.results[0].origin.name }} </li>
+              </ul>
+            </div>
+
+            <div class="mt-2">
+              <IconsHeartFull v-if="data.results[0].status === 'Alive'"/>
+              <IconsHeartVoid v-else/>
+            </div>
           </div>
+
         </div>
       </div>
-
-
-
-
-      <p> {{ data.results[0].created }} </p>
-      <p> {{ data.results[0].episode }} </p>
-      <p> {{ data.results[0].id }} </p>
-      <h1> {{ data.results[0].status }} </h1>
-      <h1> {{ data.results[0].species }} </h1>
     </div>
   </div>
 </template>
@@ -36,4 +41,6 @@
 const { data, status, error, refresh, clear } = await useFetch("https://rickandmortyapi.com/api/character");
 
 console.log(data.value);
+
+
 </script>
