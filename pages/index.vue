@@ -22,7 +22,7 @@
 
           <IconsHeartVoid
             v-else
-            @click="favoritesCharacters.addFavorite(item)"
+            @click="treatsDataStore(item)"
             class="cursor-pointer"
           />
        </Card>
