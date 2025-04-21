@@ -1,12 +1,12 @@
-// stores/useFavoritesCharacters.ts
 import { defineStore } from 'pinia'
-import type { Character } from '~/types/Characters' // ✅ IMPORT CORRETO
+import type { Character } from '~/types/Characters'
 
 export const useFavoritesCharacters = defineStore('favorites', () => {
   const favorites = ref<Character[]>([])
 
   const addFavorite = (character: Character) => {
     favorites.value.push(character)
+    console.log(character)
   }
 
   const removeFavorite = (id: number) => {

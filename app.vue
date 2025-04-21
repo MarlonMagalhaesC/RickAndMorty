@@ -36,9 +36,10 @@
           </div>
 
           <div
-            class="group mt-2 cursor-pointer"
+            class="group mt-2"
+            @click="favoritesCharacters.addFavorite(item)"
           >
-            <IconsHeartFull class="hidden group-hover:block" />
+            <IconsHeartFull class="hidden  group-hover:block" />
             <IconsHeartVoid class="block group-hover:hidden" />
           </div>
         </div>
@@ -63,11 +64,29 @@
 
 <script setup lang="ts">
 import { useFavoritesCharacters } from '~/stores/useFavoritesCharacters'
+import type { Character } from './types/Characters';
 
 const { data, status, error, refresh, clear } = await useFetch("https://rickandmortyapi.com/api/character");
 
 console.log(data.value);
 
-const favoritesStore = useFavoritesCharacters()
+const favoritesCharacters = useFavoritesCharacters()
+
+const treatsDataStore = (characterAPI: any) => {
+  console.log(characterAPI.origin.url)
+
+  const c: Character = {
+    id: characterAPI.id,
+    name: characterAPI.name,
+    image: characterAPI.image,
+    status: characterAPI.status,
+    species: characterAPI.species,
+    planet: characterAPI.origin.name,
+    url: characterAPI.origin.url
+  }
+
+  favoritesCharacters.addFavorite(c);
+}
+
 
 </script>
