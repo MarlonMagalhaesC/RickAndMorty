@@ -1,4 +1,5 @@
 <template>
+
 <Header/>
 
 <div class="bg-gray-900 pt-10">
@@ -36,11 +37,19 @@
           </div>
 
           <div
-            class="group mt-2"
-            @click="favoritesCharacters.addFavorite(item)"
+            class="mt-2"
           >
-            <IconsHeartFull class="hidden  group-hover:block" />
-            <IconsHeartVoid class="block group-hover:hidden" />
+            <IconsHeartFull
+              v-if="isFavorite(item.id)"
+              @click="favoritesCharacters.removeFavorite(item.id)"
+              class="cursor-pointer"
+            />
+
+            <IconsHeartVoid
+              v-else
+              @click="favoritesCharacters.addFavorite(item)"
+              class="cursor-pointer"
+            />
           </div>
         </div>
 
@@ -73,8 +82,6 @@ console.log(data.value);
 const favoritesCharacters = useFavoritesCharacters()
 
 const treatsDataStore = (characterAPI: any) => {
-  console.log(characterAPI.origin.url)
-
   const c: Character = {
     id: characterAPI.id,
     name: characterAPI.name,
@@ -88,5 +95,7 @@ const treatsDataStore = (characterAPI: any) => {
   favoritesCharacters.addFavorite(c);
 }
 
-
+const isFavorite = (id: number): boolean => {
+  return favoritesCharacters.favorites.some(character => character.id === id)
+}
 </script>
