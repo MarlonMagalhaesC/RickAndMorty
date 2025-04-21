@@ -4,7 +4,7 @@
       <div
         v-for="item in data.results"
         :key="item.id"
-        class="flex flex-col gap-2 w-[294px] h-[425px] bg-[#313234] text-white rounded-xl"
+        class="flex flex-col gap-2 w-[294px] h-[425px] bg-[#313234] hover:bg-[#213234] text-white rounded-xl"
       >
         <Card
           :image="item.image"
