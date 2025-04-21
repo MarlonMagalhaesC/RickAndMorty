@@ -32,7 +32,10 @@
           </div>
         </div>
 
-        <NuxtLink :to="url">
+        <NuxtLink
+        :to="url"
+        target="_blank"
+        >
           <div
             class="flex gap-1 place-self-end px-3 py-2 rounded-full bg-[#11B0C8] text-sm items-center mb-4"
           >

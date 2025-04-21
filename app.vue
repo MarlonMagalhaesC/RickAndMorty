@@ -1,8 +1,8 @@
 <template>
 <Header/>
-<!--  -->
+
 <div class="bg-gray-900 pt-10">
-  <div class="flex flex-wrap gap-4 justify-center max-w-[1300px] mx-auto">
+  <div class="flex flex-wrap gap-4 justify-center max-w-[1250px] mx-auto container">
     <div
       v-for="item in data.results"
       :key="item.id"

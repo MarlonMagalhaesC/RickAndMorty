@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-[580px] bg-black text-white">
-  <div class="mx-auto container max-w-[1250px]">
+  <div class="mx-auto container max-w-[1250px] px-4">
     <div class="flex justify-between pt-14">
       <NuxtImg
         src="img/logo.png"
