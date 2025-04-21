@@ -7,12 +7,13 @@
         height="64"
         width="219"
       />
-        <div
+        <NuxtLink
+          to="/ListaDeFavoritos"
           class="flex gap-2 place-self-end px-3 py-2 rounded-full bg-[#11B0C8] text-sm items-center mb-4"
         >
           <IconsHeartVoidWhite />
           <span>Lista de favoritos</span>
-        </div>
+        </NuxtLink>
     </div>
 
     <div class="flex justify-between">
