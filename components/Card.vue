@@ -25,12 +25,10 @@
               </li>
             </ul>
           </div>
+          <div class="mt-2">
 
-          <div
-            class="group mt-2 cursor-pointer"
-          >
-            <IconsHeartFull class="hidden group-hover:block" />
-            <IconsHeartVoid class="block group-hover:hidden" />
+            <slot />
+
           </div>
         </div>
 
