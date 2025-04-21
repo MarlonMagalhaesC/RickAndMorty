@@ -8,14 +8,53 @@
       :key="item.id"
       class="flex flex-col gap-2 w-[294px] h-[425px] bg-[#313234] text-white rounded-xl"
     >
-      <Card
-        :image="item.image"
-        :name="item.name"
-        :status="item.status"
-        :species="item.species"
-        :planet="item.origin.name"
-        :url="item.url"
-      />
+      <div class="mx-auto mt-4 border border-[#000000] rounded-2xl w-[262px] h-[200px]">
+        <NuxtImg
+          :src="item.image"
+          width="262"
+          height="200"
+          class="rounded-2xl object-cover w-full h-full"
+        />
+      </div>
+
+      <div class="mx-auto w-[262px] flex flex-col gap-2 flex-1">
+        <div class="flex flex-row justify-between flex-1">
+          <div class="flex flex-col gap-3">
+            <p>{{ item.name }}</p>
+
+            <ul class="inline-block">
+              <li class="flex items-center gap-2">
+                <IconsAlive /> {{ item.status }}
+              </li>
+              <li class="flex items-center gap-2">
+                <IconsHuman /> {{ item.species }}
+              </li>
+              <li class="flex items-center gap-2">
+                <IconsEarth /> {{ item.origin.name }}
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="group mt-2 cursor-pointer"
+          >
+            <IconsHeartFull class="hidden group-hover:block" />
+            <IconsHeartVoid class="block group-hover:hidden" />
+          </div>
+        </div>
+
+        <NuxtLink
+          :to="item.url"
+          target="_blank"
+        >
+          <div
+            class="flex gap-1 place-self-end px-3 py-2 rounded-full bg-[#11B0C8] text-sm items-center mb-4"
+          >
+            <IconsReadmore />
+            <span>Saiba Mais</span>
+          </div>
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </div>
@@ -23,9 +62,12 @@
 
 
 <script setup lang="ts">
+import { useFavoritesCharacters } from '~/stores/useFavoritesCharacters'
+
 const { data, status, error, refresh, clear } = await useFetch("https://rickandmortyapi.com/api/character");
 
 console.log(data.value);
 
+const favoritesStore = useFavoritesCharacters()
 
 </script>
