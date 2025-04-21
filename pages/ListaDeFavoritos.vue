@@ -29,5 +29,7 @@
 </template>
 
 <script lang="ts" setup>
-  const favoritesCharacters = useFavoritesCharacters()
+definePageMeta({ layout: 'header-lista-de-favoritos' })
+
+const favoritesCharacters = useFavoritesCharacters()
 </script>
