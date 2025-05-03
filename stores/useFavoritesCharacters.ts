@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import type { Character } from '~/types/Characters'
 
-export const useFavoritesCharacters = defineStore('favorites', () => {
+export const useFavoritesCharacters = defineStore('character', () => {
   const favorites = ref<Character[]>([])
 
   const addFavorite = (character: Character) => {

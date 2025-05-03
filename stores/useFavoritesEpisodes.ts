@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import type { Episode } from '~/types/Episode'
 
-export const useFavoritesEpisodes = defineStore('favorites', () => {
+export const useFavoritesEpisodes = defineStore('episodes', () => {
 
 const favorites = ref<(Episode[])>([])
 
