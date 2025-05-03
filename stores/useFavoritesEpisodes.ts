@@ -7,7 +7,6 @@ const favorites = ref<(Episode[])>([])
 
 const addFavorite = (ep: Episode) => {
   favorites.value.push(ep)
-  console.log(ep)
 }
 
 const removeFavorite = (id: number) => {
