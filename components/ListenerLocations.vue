@@ -1,5 +1,4 @@
 <template>
-
 <OverflowX>
   <div class="flex">
     <div
@@ -20,10 +19,12 @@
         <IconsHeartVoid
           v-if="!isFavorite(item.id)"
           @click="favoritesLocations.addFavorite(item)"
+          class="cursor-pointer"
         />
         <IconsHeartFull
           v-else
           @click="favoritesLocations.removeFavorite(item.id)"
+          class="cursor-pointer"
         />
       </div>
     </div>

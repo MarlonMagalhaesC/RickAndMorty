@@ -49,7 +49,7 @@
         </div>
 
         <div class="flex justify-between">
-          <ReadMore :url="item.url" />asdasdsadasdasdasdasdas
+          <ReadMore :url="item.url" />
           <IconsHeartFull
             @click="favoritesEpisodes.removeFavorite(item.id)"
             class="cursor-pointer"
@@ -66,4 +66,5 @@ definePageMeta({ layout: 'header-lista-de-favoritos' })
 
 const favoritesCharacters = useFavoritesCharacters()
 const favoritesEpisodes = useFavoritesEpisodes()
+const favoritesLocations = useFavoritesLocations()
 </script>
