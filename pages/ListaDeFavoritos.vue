@@ -5,6 +5,13 @@
       Personagens
     </h1>
 
+    <h2
+      v-if="isArrayVoid(favoritesCharacters.favorites)"
+      class="text-red-500 text-lg px-3 pt-3"
+    >
+      *Nenhum personagem foi favoritado.
+    </h2>
+
     <div class="pt-10">
       <TransitionGroup
         name="fade"
@@ -33,9 +40,16 @@
       </TransitionGroup>
     </div>
 
-    <h1 class="p-4 mt-4 text-3xl text-white">
+    <h1 class="py-4 px-3 mt-4 text-3xl text-white">
       Episodios
     </h1>
+
+    <span
+      v-if="isArrayVoid(favoritesEpisodes.favorites)"
+      class="text-red-500 text-lg px-3 pt-3"
+    >
+      *Nenhum episodio foi favoritado.
+    </span>
 
     <div class="flex text-white">
       <div
@@ -62,18 +76,23 @@
       </div>
     </div>
 
-    <h1 class="text-3xl text-white mt-10">
+    <h1 class="text-3xl text-white my-4 px-3">
       Localizações
     </h1>
 
-    <OverflowX>
-      <div class="flex">
+    <span
+      v-if="isArrayVoid(favoritesLocations.favorites)"
+      class="text-red-500 text-lg px-3 pt-3"
+    >
+      *Nenhum planeta foi favoritado.
+    </span>
+
+    <OverflowX class="flex">
         <LocationCard
           v-for="item in favoritesLocations.favorites"
           :key="item.id"
           :location="item"
         />
-      </div>
     </OverflowX>
 
   </div>
@@ -85,4 +104,6 @@ definePageMeta({ layout: 'header-lista-de-favoritos' })
 const favoritesCharacters = useFavoritesCharacters()
 const favoritesEpisodes = useFavoritesEpisodes()
 const favoritesLocations = useFavoritesLocations()
+
+const isArrayVoid = (array) => { return array.length === 0 ? true : false }
 </script>
