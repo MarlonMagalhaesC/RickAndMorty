@@ -4,29 +4,8 @@
     <div
       v-for="item in data.results"
       :key="item.id"
-      class="flex flex-col justify-between min-w-[173px] min-h-[212px] bg-[#313234] mt-2.5 mx-2.5 pb-3 rounded-3xl relative items-center px-3"
     >
-      <div class="absolute top-0 -translate-y-1/2">
-         <IconsPlanet/>
-      </div>
-      <div class="text-center pt-8 flex-1">
-         {{ item.name }}
-      </div>
-      <div class="pb-7">
-        <ReadMore :url="item.url" />
-      </div>
-      <div>
-        <IconsHeartVoid
-          v-if="!isFavorite(item.id)"
-          @click="favoritesLocations.addFavorite(item)"
-          class="cursor-pointer"
-        />
-        <IconsHeartFull
-          v-else
-          @click="favoritesLocations.removeFavorite(item.id)"
-          class="cursor-pointer"
-        />
-      </div>
+    <LocationCard :location="item" />
     </div>
   </div>
 </OverflowX>

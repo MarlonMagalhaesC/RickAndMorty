@@ -32,7 +32,6 @@
     <h1 class="p-4 mt-4 text-3xl">Episodios</h1>
 
       <ListenerEpisodes/>
-
     <h1 class="p-4 mt-4 text-3xl">Localizacoes</h1>
     <div>
       <ListenerLocations/>
