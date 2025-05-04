@@ -26,23 +26,13 @@
             </ul>
           </div>
           <div class="mt-2">
-
             <slot />
-
           </div>
         </div>
 
-        <NuxtLink
-          :to="url"
-          target="_blank"
-        >
-          <div
-            class="flex gap-1 place-self-end px-3 py-2 rounded-full bg-[#11B0C8] text-sm items-center mb-4"
-          >
-            <IconsReadmore />
-            <span>Saiba Mais</span>
+          <div class="place-self-end items-center mb-4">
+            <ReadMore :url="url" />
           </div>
-        </NuxtLink>
       </div>
 </template>
 
