@@ -13,7 +13,7 @@
 
     <NuxtPage />
 
-    <Footer/>
+    <Footer class="mt-20" />
   </div>
 </template>
 
