@@ -12,6 +12,8 @@
      />
 
     <NuxtPage />
+
+    <Footer/>
   </div>
 </template>
 
