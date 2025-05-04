@@ -1,4 +1,5 @@
 <template>
+<OverflowX class="grid grid-rows-2 grid-flow-col">
   <div
     v-for="item in data.results"
     :key="item.id"
@@ -24,6 +25,7 @@
       />
     </div>
   </div>
+</OverflowX>
 </template>
 
 <script setup lang="ts">
